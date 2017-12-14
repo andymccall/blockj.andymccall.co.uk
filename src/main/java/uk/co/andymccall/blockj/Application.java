@@ -37,7 +37,7 @@ public class Application {
 
             Timestamp newTimestamp = new Timestamp(System.currentTimeMillis());
 
-            String newPayload = "Payload " + i + ".";
+            String newPayload = "Payload " + i;
 
             Block newBlock = new Block(chain.get(i).getIndex()+1,
                     newHash,
