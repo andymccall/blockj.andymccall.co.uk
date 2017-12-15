@@ -2,26 +2,39 @@ package uk.co.andymccall.blockj.model;
 
 public class Block {
 
-    private int index;
+    private int version;
+    private int height;
     private String hash;
     private String previousHash;
     private Long timestamp;
-    private String payload;
+    private Transaction transaction;
 
-    public Block(int index, String hash, String previousHash, Long timestamp, String payload) {
-        this.index = index;
+    public Block() {
+
+    }
+
+    public Block(int height, String hash, String previousHash, Long timestamp, Transaction transaction) {
+        this.height = height;
         this.hash = hash;
         this.previousHash = previousHash;
         this.timestamp = timestamp;
-        this.payload = payload;
+        this.transaction = transaction;
     }
 
-    public int getIndex() {
-        return index;
+    public int getVersion() {
+        return version;
     }
 
-    public void setIndex(int index) {
-        this.index = index;
+    public void setVersion(int version) {
+        this.version = version;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
     }
 
     public String getHash() {
@@ -48,22 +61,23 @@ public class Block {
         this.timestamp = timestamp;
     }
 
-    public String getPayload() {
-        return payload;
+    public Transaction getTransaction() {
+        return transaction;
     }
 
-    public void setPayload(String payload) {
-        this.payload = payload;
+    public void setTransaction(Transaction transaction) {
+        this.transaction = transaction;
     }
 
     @Override
     public String toString() {
         return "Block{" +
-                "index=" + index +
+                "version=" + version +
+                ", height=" + height +
                 ", hash='" + hash + '\'' +
                 ", previousHash='" + previousHash + '\'' +
                 ", timestamp=" + timestamp +
-                ", payload='" + payload + '\'' +
+                ", transaction='" + transaction + '\'' +
                 '}';
     }
 }
